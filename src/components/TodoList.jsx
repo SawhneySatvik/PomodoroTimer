@@ -14,9 +14,8 @@ const TodoList = () => {
   const handleAddTask = () => {
     if (newTask.trim() !== '') {
       const newTaskObject = {
-        id: Date.now(), // Unique ID for each task
+        id: Date.now(), 
         text: newTask,
-        timestamp: new Date().toLocaleString(), // Timestamp for the task
         finished: false,
       };
       setTasks([...tasks, newTaskObject]);
@@ -44,16 +43,19 @@ const TodoList = () => {
 
   const renderTasks = () => {
     return tasks.map(task => (
+      <>
       <ListGroup.Item key={task.id} className="d-flex justify-content-between align-items-center">
         <div>
           <span>{task.text}</span>
           <span className="timestamp ml-2">{task.timestamp}</span>
         </div>
         <div>
-          <Button variant="info" size="sm" className="mr-2" onClick={() => handleUpdateTask(task.id)}>Update</Button>
+          <Button variant="info" size="sm" className="mr-2" onClick={() => handleUpdateTask(task.id)}>Update</Button> {' '}
           {!task.finished && <Button variant="success" size="sm" onClick={() => handleFinishTask(task.id)}>Finish</Button>}
         </div>
       </ListGroup.Item>
+      <br/>
+      </>
     ));
   };
 

@@ -6,22 +6,12 @@ const PomodoroInformation = () => {
       <section id="about">
         <h2>About the Pomodoro Technique</h2>
         <p>The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It involves breaking work into intervals, traditionally 25 minutes in length, separated by short breaks. The technique aims to improve productivity and focus by providing a structured approach to work.</p>
+        <p>The Pomodoro Technique is a simple yet powerful method for managing time and increasing productivity. By breaking work into intervals and taking regular breaks, individuals can stay focused and motivated while accomplishing their tasks. Whether you're a student, professional, or entrepreneur, the Pomodoro Technique can help you work smarter, not harder.</p>
       </section>
 
       <section id="history">
         <h2>History</h2>
         <p>The Pomodoro Technique was developed by Francesco Cirillo in the late 1980s. Cirillo named the technique "Pomodoro" (Italian for "tomato") after the tomato-shaped kitchen timer he used to track his work intervals. Since its inception, the Pomodoro Technique has gained widespread popularity and has been adopted by individuals and organizations around the world.</p>
-      </section>
-
-      <section id="benefits">
-        <h2>Benefits</h2>
-        <ul>
-          <li>Improved focus and concentration</li>
-          <li>Enhanced productivity</li>
-          <li>Better time management skills</li>
-          <li>Reduced procrastination</li>
-          <li>Increased awareness of time usage</li>
-        </ul>
       </section>
 
       <section id="how-to-use">
@@ -44,27 +34,6 @@ const PomodoroInformation = () => {
           <li>Listen to music or ambient sounds to enhance focus.</li>
           <li>Stay hydrated and take regular breaks to rest your eyes.</li>
         </ul>
-      </section>
-
-      <section id="tools-resources">
-        <h2>Tools and Resources</h2>
-        <ul>
-          <li>Pomodoro timers (physical or digital)</li>
-          <li>Pomodoro Technique apps</li>
-          <li>Online Pomodoro timers</li>
-          <li>Books and articles on time management</li>
-          <li>Online communities and forums for Pomodoro Technique enthusiasts</li>
-        </ul>
-      </section>
-
-      <section id="examples">
-        <h2>Examples</h2>
-        <p>Many successful individuals and teams have embraced the Pomodoro Technique to improve their productivity and time management skills. Examples include...</p>
-      </section>
-
-      <section id="conclusion">
-        <h2>Conclusion</h2>
-        <p>The Pomodoro Technique is a simple yet powerful method for managing time and increasing productivity. By breaking work into intervals and taking regular breaks, individuals can stay focused and motivated while accomplishing their tasks. Whether you're a student, professional, or entrepreneur, the Pomodoro Technique can help you work smarter, not harder.</p>
       </section>
     </div>
   );

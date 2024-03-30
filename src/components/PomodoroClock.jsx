@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 const Timer = ({ timeLeft }) => {
@@ -28,11 +27,16 @@ const SessionHistory = ({ sessionHistory }) => {
 };
 
 const PomodoroClock = () => {
-  const [timeLeft, setTimeLeft] = useState(25 * 60);
+  const [defaultPomodoroTime, setDefaultPomodoroTime] = useState(25); // Default Pomodoro time in minutes
+  const [defaultLongBreak, setDefaultLongBreak] = useState(15); // Default long break time in minutes
+  const [defaultShortBreak, setDefaultShortBreak] = useState(5); // Default short break time in minutes
+  const [timeLeft, setTimeLeft] = useState(defaultPomodoroTime * 60); // Initial time left (in seconds)
   const [isRunning, setIsRunning] = useState(false);
   const [lapTitle, setLapTitle] = useState('');
   const [sessionHistory, setSessionHistory] = useState([]);
-  const [is24HourFormat, setIs24HourFormat] = useState(true);
+  const [customPomodoroTime, setCustomPomodoroTime] = useState('');
+  const [customLongBreak, setCustomLongBreak] = useState('');
+  const [customShortBreak, setCustomShortBreak] = useState('');
 
   useEffect(() => {
     let timer;
@@ -41,18 +45,18 @@ const PomodoroClock = () => {
     } else if (isRunning && timeLeft === 0) {
       setIsRunning(false);
       addToSessionHistory(lapTitle);
-      setTimeLeft(25 * 60);
+      setTimeLeft(defaultPomodoroTime * 60);
       setLapTitle('');
     }
     return () => clearTimeout(timer);
-  }, [isRunning, timeLeft, lapTitle]);
+  }, [isRunning, timeLeft, lapTitle, defaultPomodoroTime]);
 
   const startPauseTimer = () => {
     setIsRunning(!isRunning);
   };
 
   const resetTimer = () => {
-    setTimeLeft(25 * 60);
+    setTimeLeft(defaultPomodoroTime * 60);
     setIsRunning(false);
     setLapTitle('');
   };
@@ -67,39 +71,98 @@ const PomodoroClock = () => {
     setLapTitle(e.target.value);
   };
 
+  const handleCustomTimeSubmit = () => {
+    if (customPomodoroTime !== '') {
+      setDefaultPomodoroTime(parseInt(customPomodoroTime));
+      setTimeLeft(parseInt(customPomodoroTime) * 60);
+    }
+    if (customLongBreak !== '') {
+      setDefaultLongBreak(parseInt(customLongBreak));
+    }
+    if (customShortBreak !== '') {
+      setDefaultShortBreak(parseInt(customShortBreak));
+    }
+  };
+
   const handleLongBreak = () => {
-    setTimeLeft(15 * 60); // Set time for long break (15 minutes)
+    setTimeLeft(defaultLongBreak * 60);
   };
 
   const handleShortBreak = () => {
-    setTimeLeft(5 * 60); // Set time for short break (5 minutes)
+    setTimeLeft(defaultShortBreak * 60);
   };
 
   return (
     <div className="pomodoro-clock">
       <Timer timeLeft={timeLeft} />
-
-      <ProgressBar className="custom-progress" now={100 - ((timeLeft / (25 * 60)) * 100)} />
-      <br/>
+      <br />
       <br />
       
+      <ProgressBar className="custom-progress" now={100 - ((timeLeft / (defaultPomodoroTime * 60)) * 100)} />
+      <br />
+      <br />
+
       <div className="button-group">
-        <Button className="button" variant="primary" onClick={startPauseTimer}>Start/Pause</Button>{" "}
+        <Button className="button" variant="primary" onClick={startPauseTimer}>
+          {isRunning ? 'Pause' : 'Start'}
+        </Button>{" "}
         <Button className="button" variant="danger" onClick={resetTimer}>Reset</Button>{" "}
         <Button className="button" variant="success" onClick={handleLongBreak}>Long Break</Button>{" "}
         <Button className="button" variant="warning" onClick={handleShortBreak}>Short Break</Button>{" "}
       </div>
-      
+
       <br />
-      
-      <div className="lap-input mt-3">
-        <Form.Control type="text" placeholder="Enter lap title" value={lapTitle} onChange={handleTitleChange} />
+      <div className="custom-time mt-3">
+        <div>
+          <label>Pomodoro Time: &nbsp; &nbsp; </label>
+          <input
+            placeholder="25 minutes"
+            type="number"
+            min="1"
+            value={customPomodoroTime}
+            onChange={(e) => setCustomPomodoroTime(e.target.value)}
+          />
+        </div>
         <br/>
+        <div>
+          <label>Short Break:&nbsp; &nbsp;</label>
+          <input
+            placeholder="5 minutes"
+            type="number"
+            min="1"
+            value={customShortBreak}
+            onChange={(e) => setCustomShortBreak(e.target.value)}
+          />
+        </div>
+        <br/>
+        <div>
+          <label>Long Break:&nbsp; &nbsp;</label>
+          <input
+            placeholder="15 minutes"
+            type="number"
+            min="1"
+            value={customLongBreak}
+            onChange={(e) => setCustomLongBreak(e.target.value)}
+          />
+        </div>
+        <br/>
+        <Button className="button" variant="primary" onClick={handleCustomTimeSubmit}>Set Custom Time</Button>
+      </div>
+
+      <br/>
+
+      <div className="lap-input mt-3">
+        <input
+          type="text"
+          placeholder="Enter lap title"
+          value={lapTitle}
+          onChange={handleTitleChange}
+        />
         <Button className="button" variant="success" onClick={() => addToSessionHistory(lapTitle)}>Add Lap</Button>
       </div>
 
       <br />
-      
+
       <SessionHistory sessionHistory={sessionHistory} />
     </div>
   );

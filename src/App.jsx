@@ -15,7 +15,7 @@ function App() {
       </nav>
       <header className='Header'>
         <h1>Pomodoro App</h1>
-        <div><Clock/></div>
+        
       </header>
       <main>
         <section id="pomodoroClock">

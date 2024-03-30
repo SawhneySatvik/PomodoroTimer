@@ -12,7 +12,7 @@ function NavBar() {
         <Nav className="ml-auto nav-comp">
           <Nav.Link href="#pomodoroClock"><p>Pomodoro</p></Nav.Link>
           <Nav.Link href="#todoList"><p>TodoList</p></Nav.Link>
-          <Nav.Link href="#pomodoroInfromation"><p>About Page</p></Nav.Link>
+          <Nav.Link href="#pomodoroInfromation"><p>About</p></Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
