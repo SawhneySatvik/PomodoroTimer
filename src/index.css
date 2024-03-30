@@ -1,0 +1,208 @@
+/* PomodoroClock.css */
+
+body{
+  background-color: #292929;
+}
+
+.pomodoro-clock {
+    text-align: center;
+  }
+  
+  .timer {
+    margin-top: 20px;
+  }
+  
+  .timer-display {
+    font-size: 3rem;
+    color: #61dafb;
+  }
+  
+  .timer-controls {
+    margin-top: 20px;
+  }
+  
+  .session-history {
+    margin-top: 20px;
+  }
+  
+  .lap-input {
+    margin-top: 20px;
+  }
+  
+
+  .task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .task-info {
+    flex-grow: 1;
+  }
+  
+  .task-buttons {
+    margin-left: 10px; /* Add margin between the text and buttons */
+  }
+  
+
+  /* PomodoroInformation.css */
+
+.pomodoro-information {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+ul, ol {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+li {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* PomodoroClock.css */
+
+.button{
+  color: #282c34;
+  background-color: #61dafb;
+  border: 1px solid #282c34;
+  align-items: inline;
+}
+
+.button:hover{
+  color: #61dafb;
+  background-color: #282c34;
+  border: 1px solid #61dafb;
+}
+
+/* PomodoroClock.css */
+.pomodoro-clock {
+  text-align: center;
+}
+
+
+.timer-display {
+  font-size: 3rem;
+  color: #61dafb;
+}
+
+.timer-controls {
+  margin-top: 20px;
+}
+
+.session-history {
+  margin-top: 20px;
+}
+
+.lap-input {
+  margin-top: 20px;
+}
+
+/* Clock.css */
+.clock {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  color: #61dafb;
+  padding: 20px;
+}
+
+
+
+.custom-progress .progress-bar {
+  background-color: #61dafb; /* sea green color */
+}
+/* NavBar.css */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensure the navbar appears above other content */
+  color: #61dafb;
+}
+
+.navbar-brand {
+  margin-right: 2rem; /* Adjust spacing between brand and links */
+  color: #61dafb;
+}
+
+.navbar-nav {
+  margin-left: auto; /* Push links to the right */
+}
+
+.nav-link {
+  margin-right: 1.5rem; /* Adjust spacing between links */
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    margin-left: 0; /* Remove margin on small screens to center links */
+  }
+
+  .nav-link {
+    margin-right: 0; /* Remove right margin on small screens */
+  }
+}
+
+/* App.css */
+body {
+  color: #61dafb;
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  background-color: #292929;
+}
+
+
+.nav-bar{
+  padding-bottom: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: #61dafb;
+}
+.nav-bar p{
+  color: #61dafb;
+}
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.TodoH2{
+  text-align: center;
+}
+
+/* App.css */
+
+
+.Header div{
+padding-top: 90px;
+padding-right: 50px;
+font-size: 2rem;
+}
