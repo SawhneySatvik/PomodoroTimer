@@ -3,7 +3,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-const Timer = ({ timeLeft }) => {
+function Timer({ timeLeft }) {
   return (
     <div className="timer">
       <div className="timer-display">
@@ -11,9 +11,9 @@ const Timer = ({ timeLeft }) => {
       </div>
     </div>
   );
-};
+}
 
-const SessionHistory = ({ sessionHistory }) => {
+function SessionHistory({ sessionHistory }) {
   return (
     <div className="session-history">
       <h3>Session History</h3>
@@ -24,7 +24,7 @@ const SessionHistory = ({ sessionHistory }) => {
       </ListGroup>
     </div>
   );
-};
+}
 
 const PomodoroClock = () => {
   const [defaultPomodoroTime, setDefaultPomodoroTime] = useState(25); // Default Pomodoro time in minutes
@@ -97,7 +97,6 @@ const PomodoroClock = () => {
       <Timer timeLeft={timeLeft} />
       <br />
       <br />
-      
       <ProgressBar className="custom-progress" now={100 - ((timeLeft / (defaultPomodoroTime * 60)) * 100)} />
       <br />
       <br />
