@@ -27,10 +27,10 @@ function SessionHistory({ sessionHistory }) {
 }
 
 function PomodoroClock() {
-  const [defaultPomodoroTime, setDefaultPomodoroTime] = useState(25); // Default Pomodoro time in minutes
-  const [defaultLongBreak, setDefaultLongBreak] = useState(15); // Default long break time in minutes
-  const [defaultShortBreak, setDefaultShortBreak] = useState(5); // Default short break time in minutes
-  const [timeLeft, setTimeLeft] = useState(defaultPomodoroTime * 60); // Initial time left (in seconds)
+  const [defaultPomodoroTime, setDefaultPomodoroTime] = useState(25); 
+  const [defaultLongBreak, setDefaultLongBreak] = useState(15); 
+  const [defaultShortBreak, setDefaultShortBreak] = useState(5); 
+  const [timeLeft, setTimeLeft] = useState(defaultPomodoroTime * 60);
   const [isRunning, setIsRunning] = useState(false);
   const [lapTitle, setLapTitle] = useState('');
   const [sessionHistory, setSessionHistory] = useState([]);
