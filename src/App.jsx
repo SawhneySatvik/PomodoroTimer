@@ -2,7 +2,6 @@
 import React from 'react';
 import PomodoroClock from './components/PomodoroClock';
 import TodoList from './components/TodoList';
-import Clock from './components/Clock';
 import PomodoroInformation from './components/PomodoroInformation';
 import NavBar from './components/NavBar';
 

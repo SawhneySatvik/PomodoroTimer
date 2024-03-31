@@ -3,11 +3,20 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 
+
+function formatTime(totalSeconds) {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds; 
+
+  return `${minutes}:${formattedSeconds}`;
+}
+
 function Timer({ timeLeft }) {
   return (
     <div className="timer">
       <div className="timer-display">
-        {`${Math.floor(timeLeft / 60)}:${timeLeft % 60 < 10 ? `0${timeLeft % 60}` : timeLeft % 60}`}
+      {formatTime(timeLeft)}
       </div>
     </div>
   );
