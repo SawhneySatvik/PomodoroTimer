@@ -1,4 +1,4 @@
-// App.js
+
 import React from 'react';
 import PomodoroClock from './components/PomodoroClock';
 import TodoList from './components/TodoList';
@@ -14,7 +14,6 @@ function App() {
       </nav>
       <header className='Header'>
         <h1>Pomodoro App</h1>
-        
       </header>
       <main>
         <section id="pomodoroClock">
