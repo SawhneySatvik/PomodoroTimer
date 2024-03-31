@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PomodoroInformation = () => {
+function PomodoroInformation() {
   return (
     <div className="pomodoro-information">
       <section id="about">
@@ -37,6 +37,6 @@ const PomodoroInformation = () => {
       </section>
     </div>
   );
-};
+}
 
 export default PomodoroInformation;

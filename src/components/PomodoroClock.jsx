@@ -26,7 +26,7 @@ function SessionHistory({ sessionHistory }) {
   );
 }
 
-const PomodoroClock = () => {
+function PomodoroClock() {
   const [defaultPomodoroTime, setDefaultPomodoroTime] = useState(25); // Default Pomodoro time in minutes
   const [defaultLongBreak, setDefaultLongBreak] = useState(15); // Default long break time in minutes
   const [defaultShortBreak, setDefaultShortBreak] = useState(5); // Default short break time in minutes
@@ -51,27 +51,27 @@ const PomodoroClock = () => {
     return () => clearTimeout(timer);
   }, [isRunning, timeLeft, lapTitle, defaultPomodoroTime]);
 
-  const startPauseTimer = () => {
+  function startPauseTimer() {
     setIsRunning(!isRunning);
-  };
+  }
 
-  const resetTimer = () => {
+  function resetTimer() {
     setTimeLeft(defaultPomodoroTime * 60);
     setIsRunning(false);
     setLapTitle('');
-  };
+  }
 
-  const addToSessionHistory = (title) => {
+  function addToSessionHistory(title) {
     if (title.trim() !== '') {
       setSessionHistory([...sessionHistory, title]);
     }
-  };
+  }
 
-  const handleTitleChange = (e) => {
+  function handleTitleChange(e) {
     setLapTitle(e.target.value);
-  };
+  }
 
-  const handleCustomTimeSubmit = () => {
+  function handleCustomTimeSubmit() {
     if (customPomodoroTime !== '') {
       setDefaultPomodoroTime(parseInt(customPomodoroTime));
       setTimeLeft(parseInt(customPomodoroTime) * 60);
@@ -82,15 +82,15 @@ const PomodoroClock = () => {
     if (customShortBreak !== '') {
       setDefaultShortBreak(parseInt(customShortBreak));
     }
-  };
+  }
 
-  const handleLongBreak = () => {
+  function handleLongBreak() {
     setTimeLeft(defaultLongBreak * 60);
-  };
+  }
 
-  const handleShortBreak = () => {
+  function handleShortBreak() {
     setTimeLeft(defaultShortBreak * 60);
-  };
+  }
 
   return (
     <div className="pomodoro-clock">
@@ -119,10 +119,9 @@ const PomodoroClock = () => {
             type="number"
             min="1"
             value={customPomodoroTime}
-            onChange={(e) => setCustomPomodoroTime(e.target.value)}
-          />
+            onChange={(e) => setCustomPomodoroTime(e.target.value)} />
         </div>
-        <br/>
+        <br />
         <div>
           <label>Short Break:&nbsp; &nbsp;</label>
           <input
@@ -130,10 +129,9 @@ const PomodoroClock = () => {
             type="number"
             min="1"
             value={customShortBreak}
-            onChange={(e) => setCustomShortBreak(e.target.value)}
-          />
+            onChange={(e) => setCustomShortBreak(e.target.value)} />
         </div>
-        <br/>
+        <br />
         <div>
           <label>Long Break:&nbsp; &nbsp;</label>
           <input
@@ -141,22 +139,20 @@ const PomodoroClock = () => {
             type="number"
             min="1"
             value={customLongBreak}
-            onChange={(e) => setCustomLongBreak(e.target.value)}
-          />
+            onChange={(e) => setCustomLongBreak(e.target.value)} />
         </div>
-        <br/>
+        <br />
         <Button className="button" variant="primary" onClick={handleCustomTimeSubmit}>Set Custom Time</Button>
       </div>
 
-      <br/>
+      <br />
 
       <div className="lap-input mt-3">
         <input
           type="text"
           placeholder="Enter lap title"
           value={lapTitle}
-          onChange={handleTitleChange}
-        />
+          onChange={handleTitleChange} />
         <Button className="button" variant="success" onClick={() => addToSessionHistory(lapTitle)}>Add Lap</Button>
       </div>
 
@@ -165,6 +161,6 @@ const PomodoroClock = () => {
       <SessionHistory sessionHistory={sessionHistory} />
     </div>
   );
-};
+}
 
 export default PomodoroClock;

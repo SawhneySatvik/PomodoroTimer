@@ -5,47 +5,47 @@ body{
 }
 
 .pomodoro-clock {
-    text-align: center;
-  }
+  text-align: center;
+}
   
-  .timer {
-    margin-top: 20px;
-  }
+.timer {
+  margin-top: 20px;
+}
   
-  .timer-display {
-    font-size: 3rem;
-    color: #61dafb;
-  }
+.timer-display {
+  font-size: 3rem;
+  color: #61dafb;
+}
   
-  .timer-controls {
-    margin-top: 20px;
-  }
+.timer-controls {
+  margin-top: 20px;
+}
   
-  .session-history {
-    margin-top: 20px;
-  }
+.session-history {
+  margin-top: 20px;
+}
   
-  .lap-input {
-    margin-top: 20px;
-  }
-  
-
-  .task-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .task-info {
-    flex-grow: 1;
-  }
-  
-  .task-buttons {
-    margin-left: 10px; /* Add margin between the text and buttons */
-  }
+.lap-input {
+  margin-top: 20px;
+}
   
 
-  /* PomodoroInformation.css */
+.task-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.task-info {
+  flex-grow: 1;
+}
+  
+.task-buttons {
+  margin-left: 10px; 
+}
+  
+
+/* PomodoroInformation.css */
 
 .pomodoro-information {
   max-width: 1800px;
@@ -80,6 +80,10 @@ li {
 
 /* PomodoroClock.css */
 
+.pomodoro-clock {
+  text-align: center;
+}
+
 .button{
   color: #282c34;
   background-color: #61dafb;
@@ -92,12 +96,6 @@ li {
   background-color: #282c34;
   border: 1px solid #61dafb;
 }
-
-/* PomodoroClock.css */
-.pomodoro-clock {
-  text-align: center;
-}
-
 
 .timer-display {
   font-size: 3rem;
@@ -116,15 +114,6 @@ li {
   margin-top: 20px;
 }
 
-/* Clock.css */
-.clock {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.2rem;
-  color: #61dafb;
-  padding: 20px;
-}
 
 
 
@@ -163,7 +152,6 @@ li {
   }
 }
 
-/* App.css */
 body {
   color: #61dafb;
   margin: 0%;
@@ -197,9 +185,6 @@ footer {
 .TodoH2{
   text-align: center;
 }
-
-/* App.css */
-
 
 .Header div{
 padding-top: 90px;

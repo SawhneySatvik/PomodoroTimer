@@ -3,27 +3,27 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-const TodoList = () => {
+function TodoList() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
 
-  const handleNewTaskChange = (e) => {
+  function handleNewTaskChange(e) {
     setNewTask(e.target.value);
-  };
+  }
 
-  const handleAddTask = () => {
+  function handleAddTask() {
     if (newTask.trim() !== '') {
       const newTaskObject = {
-        id: Date.now(), 
+        id: Date.now(),
         text: newTask,
         finished: false,
       };
       setTasks([...tasks, newTaskObject]);
       setNewTask('');
     }
-  };
+  }
 
-  const handleUpdateTask = (id) => {
+  function handleUpdateTask(id) {
     const updatedTasks = tasks.map(task => {
       if (task.id === id) {
         return {
@@ -34,30 +34,30 @@ const TodoList = () => {
       return task;
     });
     setTasks(updatedTasks);
-  };
+  }
 
-  const handleFinishTask = (id) => {
+  function handleFinishTask(id) {
     const updatedTasks = tasks.filter(task => task.id !== id);
     setTasks(updatedTasks);
-  };
+  }
 
-  const renderTasks = () => {
+  function renderTasks() {
     return tasks.map(task => (
       <>
-      <ListGroup.Item key={task.id} className="d-flex justify-content-between align-items-center">
-        <div>
-          <span>{task.text}</span>
-          <span className="timestamp ml-2">{task.timestamp}</span>
-        </div>
-        <div>
-          <Button variant="info" size="sm" className="mr-2" onClick={() => handleUpdateTask(task.id)}>Update</Button> {' '}
-          {!task.finished && <Button variant="success" size="sm" onClick={() => handleFinishTask(task.id)}>Finish</Button>}
-        </div>
-      </ListGroup.Item>
-      <br/>
+        <ListGroup.Item key={task.id} className="d-flex justify-content-between align-items-center">
+          <div>
+            <span>{task.text}</span>
+            <span className="timestamp ml-2">{task.timestamp}</span>
+          </div>
+          <div>
+            <Button variant="info" size="sm" className="mr-2" onClick={() => handleUpdateTask(task.id)}>Update</Button> {' '}
+            {!task.finished && <Button variant="success" size="sm" onClick={() => handleFinishTask(task.id)}>Finish</Button>}
+          </div>
+        </ListGroup.Item>
+        <br />
       </>
     ));
-  };
+  }
 
   return (
     <div>
@@ -73,6 +73,6 @@ const TodoList = () => {
       </ListGroup>
     </div>
   );
-};
+}
 
 export default TodoList; 
