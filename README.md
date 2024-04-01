@@ -42,7 +42,7 @@ The Pomodoro App consists of the following components:
 
 To run the Pomodoro App locally, follow these steps:
 
-1. Clone the repository: `git clone <repository-url>`
+1. Clone the repository: `git clone https://github.com/SawhneySatvik/PomodoroTimer/`
 2. Navigate to the project directory: `cd pomodoro-app`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
