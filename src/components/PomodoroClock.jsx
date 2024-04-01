@@ -12,7 +12,7 @@ function formatTime(totalSeconds) {
   return `${minutes}:${formattedSeconds}`;
 }
 
-function Timer({ timeLeft }) {
+function Timer({timeLeft}) {
   return (
     <div className="timer">
       <div className="timer-display">
@@ -22,7 +22,7 @@ function Timer({ timeLeft }) {
   );
 }
 
-function SessionHistory({ sessionHistory }) {
+function SessionHistory({sessionHistory}) {
   return (
     <div className="session-history">
       <h3>Session History</h3>
@@ -81,17 +81,23 @@ function PomodoroClock() {
   }
 
   function handleCustomTimeSubmit() {
-    if (customPomodoroTime !== '') {
-      setDefaultPomodoroTime(parseInt(customPomodoroTime));
-      setTimeLeft(parseInt(customPomodoroTime) * 60);
+    const newPomodoroTime = parseInt(customPomodoroTime, 10) || defaultPomodoroTime;
+    const newLongBreakTime = parseInt(customLongBreak, 10) || defaultLongBreak;
+    const newShortBreakTime = parseInt(customShortBreak, 10) || defaultShortBreak;
+  
+    setDefaultPomodoroTime(newPomodoroTime);
+    setDefaultLongBreak(newLongBreakTime);
+    setDefaultShortBreak(newShortBreakTime);
+
+    if (isRunning) {
+      setTimeLeft(newPomodoroTime * 60);
     }
-    if (customLongBreak !== '') {
-      setDefaultLongBreak(parseInt(customLongBreak));
-    }
-    if (customShortBreak !== '') {
-      setDefaultShortBreak(parseInt(customShortBreak));
-    }
+  
+    setCustomPomodoroTime('');
+    setCustomLongBreak('');
+    setCustomShortBreak('');
   }
+  
 
   function handleLongBreak() {
     setTimeLeft(defaultLongBreak * 60);
