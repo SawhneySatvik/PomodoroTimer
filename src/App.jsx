@@ -1,5 +1,4 @@
 
-import React from 'react';
 import PomodoroClock from './components/PomodoroClock';
 import TodoList from './components/TodoList';
 import PomodoroInformation from './components/PomodoroInformation';
